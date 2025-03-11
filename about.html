@@ -1,0 +1,1063 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hakkımda - Kriptoloji ve Güvenlik Bloğu</title>
+    <meta name="description" content="25+ yıllık geliştirici olarak kariyer yolculuğum, kriptoloji ve güvenlik alanındaki deneyimlerim">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --bg-color: #f8f9fa;
+            --text-color: #212529;
+            --primary-color: #0d6efd;
+            --secondary-color: #6c757d;
+            --dark-color: #212529;
+            --light-color: #f8f9fa;
+            --accent-color: #0dcaf0;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            --border-radius: 12px;
+            --transition: all 0.3s ease;
+            --timeline-color: var(--primary-color);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'SF Pro Text', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+            line-height: 1.7;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+        }
+        
+        a {
+            text-decoration: none;
+            color: var(--primary-color);
+            transition: var(--transition);
+        }
+        
+        a:hover {
+            color: #0a58ca;
+        }
+        
+        /* Header Styles */
+        header {
+            padding: 6rem 0 3rem;
+            background: linear-gradient(120deg, #2b5876, #4e4376);
+            color: white;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        
+        .header-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .header-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            letter-spacing: -0.5px;
+        }
+        
+        .header-subtitle {
+            font-size: 1.5rem;
+            font-weight: 400;
+            max-width: 800px;
+            opacity: 0.9;
+        }
+        
+        /* Navigation Styles */
+        nav {
+            background-color: white;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow);
+            padding: 1rem 0;
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo i {
+            margin-right: 10px;
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        .nav-menu a {
+            color: var(--dark-color);
+            font-weight: 500;
+            padding: 0.5rem 0;
+            position: relative;
+        }
+        
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary-color);
+            transition: var(--transition);
+        }
+        
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
+        
+        .nav-menu a.active::after {
+            width: 100%;
+        }
+        
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--dark-color);
+        }
+        
+        /* Main Content Styles */
+        main {
+            padding: 4rem 0;
+        }
+        
+        .about-section {
+            background-color: white;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            padding: 3rem;
+            margin-bottom: 4rem;
+        }
+        
+        .about-intro {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 3rem;
+            margin-bottom: 4rem;
+            align-items: center;
+        }
+        
+        .profile-image {
+            position: relative;
+            width: 100%;
+            padding-bottom: 100%;
+            border-radius: 50%;
+            overflow: hidden;
+            background: linear-gradient(120deg, #4e54c8, #8f94fb);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .profile-image i {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 5rem;
+            color: white;
+        }
+        
+        .about-text h2 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .about-text h2::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -0.5rem;
+            width: 80px;
+            height: 4px;
+            background-color: var(--primary-color);
+            border-radius: 2px;
+        }
+        
+        .about-text p {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -0.5rem;
+            width: 60px;
+            height: 4px;
+            background-color: var(--primary-color);
+            border-radius: 2px;
+        }
+        
+        /* Timeline Styles */
+        .timeline {
+            position: relative;
+            margin: 3rem 0;
+            padding-left: 2rem;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 4px;
+            height: 100%;
+            background-color: var(--timeline-color);
+            border-radius: 2px;
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 3rem;
+            padding-left: 2rem;
+        }
+        
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -14px;
+            top: 0;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background-color: white;
+            border: 4px solid var(--timeline-color);
+            z-index: 1;
+        }
+        
+        .timeline-date {
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+        
+        .timeline-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        
+        .timeline-content {
+            color: var(--secondary-color);
+        }
+        
+        /* Skills Section */
+        .skills-section {
+            margin-top: 4rem;
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+        
+        .skill-category {
+            background-color: white;
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            box-shadow: var(--shadow);
+        }
+        
+        .skill-category h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .skill-category h3::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -0.5rem;
+            width: 40px;
+            height: 3px;
+            background-color: var(--primary-color);
+            border-radius: 2px;
+        }
+        
+        .skills-list {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+        
+        .skill-item {
+            background-color: var(--light-color);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.95rem;
+            transition: var(--transition);
+        }
+        
+        .skill-item:hover {
+            background-color: var(--primary-color);
+            color: white;
+            transform: translateY(-3px);
+        }
+        
+        /* Projects Section */
+        .projects-section {
+            margin-top: 4rem;
+        }
+        
+        .project-card {
+            background-color: white;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            margin-bottom: 2rem;
+            transition: var(--transition);
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .project-header {
+            background: linear-gradient(120deg, #4e54c8, #8f94fb);
+            color: white;
+            padding: 2rem;
+        }
+        
+        .project-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        
+        .project-subtitle {
+            opacity: 0.9;
+            font-size: 1.1rem;
+        }
+        
+        .project-content {
+            padding: 2rem;
+        }
+        
+        .project-description {
+            margin-bottom: 1.5rem;
+        }
+        
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+        
+        .tech-tag {
+            background-color: var(--light-color);
+            padding: 0.3rem 0.8rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+        }
+        
+        /* Contact Section */
+        .contact-section {
+            margin-top: 4rem;
+            background-color: white;
+            border-radius: var(--border-radius);
+            padding: 3rem;
+            box-shadow: var(--shadow);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        
+        .contact-info h3 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .contact-info h3::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -0.5rem;
+            width: 60px;
+            height: 4px;
+            background-color: var(--primary-color);
+            border-radius: 2px;
+        }
+        
+        .contact-text {
+            margin-bottom: 2rem;
+        }
+        
+        .contact-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+        
+        .contact-link {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            background-color: var(--light-color);
+            border-radius: 50px;
+            transition: var(--transition);
+        }
+        
+        .contact-link:hover {
+            background-color: var(--primary-color);
+            color: white;
+            transform: translateY(-3px);
+        }
+        
+        .contact-link i {
+            font-size: 1.2rem;
+        }
+        
+        .contact-form {
+            display: grid;
+            gap: 1.5rem;
+        }
+        
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        
+        .form-label {
+            font-weight: 600;
+            color: var(--dark-color);
+        }
+        
+        .form-control {
+            padding: 0.75rem 1rem;
+            border: 1px solid #e9ecef;
+            border-radius: var(--border-radius);
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.1);
+        }
+        
+        textarea.form-control {
+            min-height: 120px;
+            resize: vertical;
+        }
+        
+        .submit-btn {
+            padding: 0.75rem 1.5rem;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .submit-btn:hover {
+            background-color: #0a58ca;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Footer Styles */
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 4rem 0 1rem;
+            margin-top: 4rem;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .footer-section h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 0.75rem;
+        }
+        
+        .footer-section h3::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 50px;
+            height: 4px;
+            background-color: var(--primary-color);
+            border-radius: 2px;
+        }
+        
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+        
+        .footer-links a {
+            color: #adb5bd;
+            transition: var(--transition);
+        }
+        
+        .footer-links a:hover {
+            color: white;
+            transform: translateX(5px);
+        }
+        
+        .recent-posts-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        
+        .recent-posts-list a {
+            color: #adb5bd;
+            transition: var(--transition);
+        }
+        
+        .recent-posts-list a:hover {
+            color: white;
+        }
+        
+        .recent-posts-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+        }
+        
+        .recent-post-icon {
+            font-size: 0.8rem;
+            color: var(--primary-color);
+            padding-top: 0.35rem;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #adb5bd;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 1200px) {
+            .skills-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .about-intro {
+                grid-template-columns: 1fr;
+            }
+            
+            .profile-image {
+                max-width: 300px;
+                padding-bottom: 300px;
+                margin: 0 auto;
+            }
+            
+            .contact-section {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header-title {
+                font-size: 2.5rem;
+            }
+            
+            .header-subtitle {
+                font-size: 1.25rem;
+            }
+            
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .nav-menu {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 80%;
+                max-width: 300px;
+                height: 100vh;
+                background-color: white;
+                flex-direction: column;
+                padding: 5rem 2rem;
+                transition: right 0.3s ease;
+                z-index: 1002;
+                gap: 1.5rem;
+                box-shadow: -5px 0 30px rgba(0, 0, 0, 0.1);
+            }
+            
+            .nav-menu.active {
+                right: 0;
+            }
+            
+            .mobile-menu-toggle {
+                display: block;
+                z-index: 1003;
+            }
+            
+            .overlay {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.5);
+                z-index: 1001;
+                visibility: hidden;
+                opacity: 0;
+                transition: opacity 0.3s ease;
+            }
+            
+            .overlay.active {
+                visibility: visible;
+                opacity: 1;
+            }
+            
+            .mobile-menu-close {
+                position: absolute;
+                top: 1.5rem;
+                right: 1.5rem;
+                background: none;
+                border: none;
+                font-size: 1.5rem;
+                cursor: pointer;
+                color: var(--dark-color);
+            }
+            
+            .section-title, .about-text h2 {
+                font-size: 1.6rem;
+            }
+            
+            .about-section, .contact-section {
+                padding: 2rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .header-title {
+                font-size: 2rem;
+            }
+            
+            .timeline {
+                padding-left: 1rem;
+            }
+            
+            .timeline-item {
+                padding-left: 1.5rem;
+            }
+            
+            .contact-links {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <h1 class="header-title">Hakkımda</h1>
+            <p class="header-subtitle">25+ yıllık tecrübe ile kriptoloji ve güvenlik alanında uzmanlaşmış bir geliştirici</p>
+        </div>
+    </header>
+    
+    <nav>
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-shield-alt"></i> KriptoLab
+            </a>
+            <button class="mobile-menu-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="index.html">Ana Sayfa</a></li>
+                <li><a href="#">Makaleler</a></li>
+                <li><a href="#">Projeler</a></li>
+                <li><a href="#">Kaynaklar</a></li>
+                <li><a href="about.html" class="active">Hakkımda</a></li>
+                <li><a href="#">İletişim</a></li>
+                <button class="mobile-menu-close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </ul>
+        </div>
+    </nav>
+    
+    <div class="overlay"></div>
+    
+    <main>
+        <div class="container">
+            <section class="about-section">
+                <div class="about-intro">
+                    <div class="profile-image">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="about-text">
+                        <h2>Merhaba, Ben Kriptoloji Uzmanıyım</h2>
+                        <p>Türkiye'de doğdum ve 7-8 yaşımdan beri bilgisayarlara ilgi duyuyorum. Programlama yolculuğum 2001 yılında, video oyunların nasıl yapıldığına dair merakımla başladı. Bu merak, lise yıllarımda QBasic, Visual Basic, Pascal ve Turbo C öğrenmeme yol açtı.</p>
+                        <p>Kariyerim boyunca, web geliştirmeden mobil uygulamalara, kriptografiden yapay zekâ ve blockchain'e kadar bilgimin sınırlarını sürekli zorladım. Güvenli, verimli ve yenilikçi dijital iletişim çözümleri geliştirme konusunda tutkuluyum.</p>
+                    </div>
+                </div>
+                
+                <div class="career-section">
+                    <h3 class="section-title">Kariyer Yolculuğum</h3>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-date">2004 - 2006</div>
+                            <h4 class="timeline-title">Eğitim ve İlk Adımlar</h4>
+                            <div class="timeline-content">
+                                <p>2004 yılında Bilgisayar Programcılığı alanında iki yıllık bir eğitim almaya başladım. Aynı yıl içinde, QBasic ve Visual Basic geçmişim sayesinde ASP kullanarak web sayfaları geliştirmeye başladım. JavaScript, SQL ve Access DB alanlarında da kendimi geliştirdim, bu sayede freelance çalışmaya ve web geliştirmeden kazanç elde etmeye başladım.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <div class="timeline-date">2006 - 2008</div>
+                            <h4 class="timeline-title">Freelance ve Profesyonel Başlangıç</h4>
+                            <div class="timeline-content">
+                                <p>2006'da mezun olduktan sonra, 2008 yılına kadar freelance çalışmaya devam ettim. 2008'de ASP kullanarak web sayfaları geliştirmek üzere bir şirkete katıldım. Bu dönem, PHP ve çeşitli web geliştirme framework'lerini keşfettiğim dönemdi.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <div class="timeline-date">2009 - 2012</div>
+                            <h4 class="timeline-title">Mobil Geliştirme ve İnovasyon</h4>
+                            <div class="timeline-content">
+                                <p>2009'da mobil platformların ortaya çıkması, Android ve iOS geliştirme için Java ve Objective-C öğrenmeme yol açtı. Bir şirket için Android uygulaması geliştirdim ve kendi Apple hesabım altında iki iOS uygulaması yayınladım. WebRTC ve WebSockets başta olmak üzere HTML5'e olan ilgim 2010'dan itibaren arttı. Ayrıca JSON tabanlı veritabanları ve Dart ve Web Components gibi yeni teknolojilerle de deneyler yaptım.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <div class="timeline-date">2013 - 2019</div>
+                            <h4 class="timeline-title">Mesajlaşma Uygulamaları ve Kriptografi</h4>
+                            <div class="timeline-content">
+                                <p>Kariyerimin önemli bir kısmını mesajlaşma uygulamaları geliştirmeye adadım. 2013 yılında, mesajlaşma özellikleri içeren kapsamlı bir eğitim projesi olan <strong>Edurel</strong>'i geliştirdim. Mesajlaşma uygulamalarına olan derin dalışım, sunucu tarafı, iOS ve Android istemcileri geliştirmeyi içeriyordu. Bu süreçte asenkron programlama, iOS iç yapısı ve Apple ekosistemi konularında uzmanlaştım. Double Ratchet algoritmasını kullanarak şifreleme uyguladım ve push bildirimleri, sesli ve görüntülü aramalar için WebRTC ve CallKit API'leri konusunda geniş deneyim kazandım.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <div class="timeline-date">2020 - 2022</div>
+                            <h4 class="timeline-title">Kripto Para ve Yapay Zeka Projeleri</h4>
+                            <div class="timeline-content">
+                                <p>2020'de kripto para teknolojilerine yöneldim, API'lerini kullanarak Binance için botlar ve sinyal tespiti için yapay zeka geliştirdim. Ayrıca Web3.js kullanarak Solana ağı projeleri üzerinde çalıştım.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <div class="timeline-date">2023 - Günümüz</div>
+                            <h4 class="timeline-title">Güvenli Mesajlaşma Platformu</h4>
+                            <div class="timeline-content">
+                                <p>En son projem, uçtan uca şifrelenmiş, anonim bir mesajlaşma uygulaması geliştirmek. Temel bileşenleri C dilinde yazdım, WebAssembly kullanarak web uyumlu hale getirdim ve bazı kısımlarını GitHub'da açık kaynak olarak paylaştım. Bu proje, düşük seviyeli programlama, kriptografi ve tam yığın geliştirme konusundaki becerilerimi sergiliyor.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="projects-section">
+                <h3 class="section-title">Güncel Projelerim</h3>
+                <div class="project-card">
+                    <div class="project-header">
+                        <h4 class="project-title">Güvenli Mesajlaşma Platformu</h4>
+                        <p class="project-subtitle">Uçtan uca şifrelenmiş, anonim iletişim çözümü</p>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-description">
+                            <p>Bu proje üç ana bileşene ayrılmıştır:</p>
+                            <ol>
+                                <li><strong>LibMessageKit:</strong> Güvenli, uçtan uca şifrelenmiş mesajlaşma için C kütüphanesi.</li>
+                                <li><strong>LibMessageKit-NetworkLayer:</strong> TCP Soket Ağ Modülü.</li>
+                                <li><strong>SML (Secure Message Layer):</strong> DoubleRatchet ve MLS protokollerini uygulayan kriptografik modül.</li>
+                            </ol>
+                            <p>Sunucu tarafında, LXC kullanarak sanallaştırma, NFTables ile güvenlik duvarları yönetimi ve sunucu yönetimi için NGINX uyguladım. Ayrıca TLS soket iletişimleri için LibTLS (OpenBSD) ve PQECDH destekleyen kriptografi için Libsodium ile çalışıyorum.</p>
+                        </div>
+                        <div class="project-tech">
+                            <span class="tech-tag">C</span>
+                            <span class="tech-tag">WebAssembly</span>
+                            <span class="tech-tag">Kriptografi</span>
+                            <span class="tech-tag">DoubleRatchet</span>
+                            <span class="tech-tag">MLS</span>
+                            <span class="tech-tag">TCP/IP</span>
+                            <span class="tech-tag">LibTLS</span>
+                            <span class="tech-tag">Libsodium</span>
+                            <span class="tech-tag">LXC</span>
+                            <span class="tech-tag">NGINX</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="skills-section">
+                <h3 class="section-title">Uzmanlık Alanlarım</h3>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3>Programlama Dilleri</h3>
+                        <div class="skills-list">
+                            <span class="skill-item">C</span>
+                            <span class="skill-item">C++</span>
+                            <span class="skill-item">JavaScript</span>
+                            <span class="skill-item">Objective-C</span>
+                            <span class="skill-item">Java</span>
+                            <span class="skill-item">PHP</span>
+                            <span class="skill-item">Python</span>
+                            <span class="skill-item">Swift</span>
+                            <span class="skill-item">Dart</span>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h3>Web Teknolojileri</h3>
+                        <div class="skills-list">
+                            <span class="skill-item">HTML5</span>
+                            <span class="skill-item">CSS3</span>
+                            <span class="skill-item">WebRTC</span>
+                            <span class="skill-item">WebSockets</span>
+                            <span class="skill-item">Web Components</span>
+                            <span class="skill-item">WebAssembly</span>
+                            <span class="skill-item">Web3.js</span>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h3>Mobil Geliştirme</h3>
+                        <div class="skills-list">
+                            <span class="skill-item">iOS</span>
+                            <span class="skill-item">Android</span>
+                            <span class="skill-item">Push Notifications</span>
+                            <span class="skill-item">CallKit</span>
+                            <span class="skill-item">Mobile Security</span>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h3>Kriptografi ve Güvenlik</h3>
+                        <div class="skills-list">
+                            <span class="skill-item">E2EE</span>
+                            <span class="skill-item">Double Ratchet</span>
+                            <span class="skill-item">MLS Protocol</span>
+                            <span class="skill-item">LibTLS</span>
+                            <span class="skill-item">Libsodium</span>
+                            <span class="skill-item">PQECDH</span>
+                            <span class="skill-item">NFTables</span>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h3>Sunucu Teknolojileri</h3>
+                        <div class="skills-list">
+                            <span class="skill-item">NGINX</span>
+                            <span class="skill-item">LXC</span>
+                            <span class="skill-item">Virtualization</span>
+                            <span class="skill-item">TCP/IP</span>
+                            <span class="skill-item">SQL</span>
+                            <span class="skill-item">NoSQL</span>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h3>Gelişmiş Teknolojiler</h3>
+                        <div class="skills-list">
+                            <span class="skill-item">AI</span>
+                            <span class="skill-item">Blockchain</span>
+                            <span class="skill-item">Cryptocurrency</span>
+                            <span class="skill-item">Signal Processing</span>
+                            <span class="skill-item">Low-level Programming</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="contact-section">
+                <div class="contact-info">
+                    <h3>İletişime Geçin</h3>
+                    <p class="contact-text">Projelerim, iş birliği fırsatları veya kriptoloji ve güvenlik alanındaki sorularınız için benimle iletişime geçmekten çekinmeyin.</p>
+                    <div class="contact-links">
+                        <a href="#" class="contact-link">
+                            <i class="fas fa-envelope"></i>
+                            <span>E-posta</span>
+                        </a>
+                        <a href="#" class="contact-link">
+                            <i class="fab fa-github"></i>
+                            <span>GitHub</span>
+                        </a>
+                        <a href="#" class="contact-link">
+                            <i class="fab fa-linkedin"></i>
+                            <span>LinkedIn</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <form class="contact-form">
+                    <div class="form-group">
+                        <label for="name" class="form-label">Adınız</label>
+                        <input type="text" id="name" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email" class="form-label">E-posta Adresiniz</label>
+                        <input type="email" id="email" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message" class="form-label">Mesajınız</label>
+                        <textarea id="message" class="form-control" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Gönder</button>
+                </form>
+            </section>
+        </div>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>Hakkımızda</h3>
+                    <p>KriptoLab, uçtan uca şifreli uygulamalar ve uygulamalı kriptoloji hakkında kapsamlı bilgiler sunan bir kaynaktır.</p>
+                    <div class="social-links" style="margin-top: 1.5rem;">
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-medium"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Hızlı Bağlantılar</h3>
+                    <div class="footer-links">
+                        <a href="index.html">Ana Sayfa</a>
+                        <a href="#">Makaleler</a>
+                        <a href="#">Projeler</a>
+                        <a href="#">Kaynaklar</a>
+                        <a href="about.html">Hakkımda</a>
+                        <a href="#">İletişim</a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Son Yazılar</h3>
+                    <ul class="recent-posts-list">
+                        <li>
+                            <i class="fas fa-angle-right recent-post-icon"></i>
+                            <a href="#">End-to-End Şifreleme: Modern Güvenliğin Temeli</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-angle-right recent-post-icon"></i>
+                            <a href="#">Simetrik ve Asimetrik Şifreleme Karşılaştırması</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-angle-right recent-post-icon"></i>
+                            <a href="#">Zero-Knowledge Proofs ve Gizlilik</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; <span id="current-year">2025</span> KriptoLab. Tüm Hakları Saklıdır.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Yıl bilgisini otomatik güncelle
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+        
+        // Mobil menü işlevselliği
+        const menuToggle = document.querySelector('.mobile-menu-toggle');
+        const menuClose = document.querySelector('.mobile-menu-close');
+        const navMenu = document.querySelector('.nav-menu');
+        const overlay = document.querySelector('.overlay');
+        
+        menuToggle.addEventListener('click', function() {
+            navMenu.classList.add('active');
+            overlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+        
+        function closeMenu() {
+            navMenu.classList.remove('active');
+            overlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+        
+        menuClose.addEventListener('click', closeMenu);
+        overlay.addEventListener('click', closeMenu);
+    </script>
+</body>
+</html>
