@@ -189,7 +189,7 @@ class SiteNavbar extends HTMLElement {
             </style>
             
             <nav class="main-nav">
-                <a href="index.html" class="nav-item ${isHomePage ? 'active' : ''}">Home</a>
+                <a href="${this.getRelativePath()}index.html" class="nav-item ${isHomePage ? 'active' : ''}">Home</a>
                 <a href="${this.getRelativePath()}about.html" class="nav-item ${isAboutPage ? 'active' : ''}">About</a>
             </nav>
         `;
