@@ -11,10 +11,10 @@
     }
 })();
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const switchWrapper = document.createElement('div');
     switchWrapper.className = 'theme-toggle';
-    
+
     switchWrapper.innerHTML = `
         <button id="theme-toggle" aria-label="Toggle dark mode">
             <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -92,18 +92,18 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     `;
     document.head.appendChild(style);
-    
+
     document.body.appendChild(switchWrapper);
 
     const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
-    
+
     function setTheme(theme) {
         document.documentElement.setAttribute('data-theme', theme);
         localStorage.setItem('theme', theme);
     }
-    
+
     const savedTheme = localStorage.getItem('theme');
-    
+
     if (savedTheme) {
         setTheme(savedTheme);
     } else {
@@ -113,8 +113,8 @@ document.addEventListener('DOMContentLoaded', function() {
             setTheme('light');
         }
     }
-    
-    document.getElementById('theme-toggle').addEventListener('click', function() {
+
+    document.getElementById('theme-toggle').addEventListener('click', function () {
         const currentTheme = document.documentElement.getAttribute('data-theme');
         if (currentTheme === 'dark') {
             setTheme('light');
@@ -122,8 +122,8 @@ document.addEventListener('DOMContentLoaded', function() {
             setTheme('dark');
         }
     });
-    
-    prefersDarkScheme.addEventListener('change', function(e) {
+
+    prefersDarkScheme.addEventListener('change', function (e) {
         if (!localStorage.getItem('theme')) {
             if (e.matches) {
                 setTheme('dark');
@@ -139,12 +139,12 @@ class SiteNavbar extends HTMLElement {
         super();
         this.attachShadow({ mode: 'open' });
     }
-    
+
     connectedCallback() {
         const currentPath = window.location.pathname;
         const isHomePage = currentPath === '/' || currentPath.endsWith('index.html');
         const isAboutPage = currentPath.includes('about.html');
-        
+
         this.shadowRoot.innerHTML = `
             <style>
                 :host {
@@ -189,12 +189,12 @@ class SiteNavbar extends HTMLElement {
             </style>
             
             <nav class="main-nav">
-                <a href="${this.getRelativePath()}index.html" class="nav-item ${isHomePage ? 'active' : ''}">Home</a>
+                <a href="/" class="nav-item ${isHomePage ? 'active' : ''}">Home</a>
                 <a href="${this.getRelativePath()}about.html" class="nav-item ${isAboutPage ? 'active' : ''}">About</a>
             </nav>
         `;
     }
-    
+
     getRelativePath() {
         const path = window.location.pathname;
         if (path.includes('/posts/')) {
@@ -209,10 +209,10 @@ class SiteHeader extends HTMLElement {
         super();
         this.attachShadow({ mode: 'open' });
     }
-    
+
     connectedCallback() {
         const isBlogPost = window.location.pathname.includes('/posts/');
-        
+
         const subtitle = this.getAttribute('subtitle') || "E2E Encryption Researcher | Secure Messaging Architect";
 
         this.shadowRoot.innerHTML = `
@@ -297,7 +297,7 @@ class SiteHeader extends HTMLElement {
             </header>
         `;
     }
-    
+
     getRelativePath() {
         const path = window.location.pathname;
         if (path.includes('/posts/')) {
@@ -312,10 +312,10 @@ class SiteFooter extends HTMLElement {
         super();
         this.attachShadow({ mode: 'open' });
     }
-    
+
     connectedCallback() {
         const year = this.getAttribute('year') || new Date().getFullYear();
-        
+
         this.shadowRoot.innerHTML = `
             <style>
                 :host {
