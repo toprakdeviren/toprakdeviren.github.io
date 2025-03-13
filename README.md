@@ -18,7 +18,7 @@ With 23+ years of experience in software development and a specialization in enc
 - **Privacy considerations** in digital communication
 
 ## 📚 Featured Content
-
+- [**Can WhatsApp See Your Messages? The E2EE Illusion**](https://toprakdeviren.github.io/posts/can-whatsapp-see-your-messages-the-e2ee-illusion.html) - A technical analysis of WhatsApp's encryption vulnerabilities and privacy concerns
 - [**We Don't Need E2EE, We Need P2PE**](https://toprakdeviren.github.io/posts/we-dont-need-end-to-end-encryption-we-need-peer-to-peer-encryption.html) - Exploring the transition from server-based to true peer-to-peer encryption
 - [**Secrets of Messaging Apps**](https://toprakdeviren.github.io/posts/secrets-of-messaging-apps-end-to-end-encryption.html) - A critical analysis of E2E encryption claims by popular messaging platforms
 - [**Artificial Intelligence: Myths vs. Reality**](https://toprakdeviren.github.io/posts/artificial-intelligence-from-science-fiction-myths-to-reality.html) - Debunking common AI misconceptions

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Can WhatsApp See Your Messages? The E2EE Illusion | Uğur Toprakdeviren</title>
+    
+    <!-- Meta Descriptions -->
+    <meta name="description" content="A critical analysis of WhatsApp's end-to-end encryption claims and the technical issues that may allow them to access your messages.">
+    <meta name="keywords" content="WhatsApp security, end-to-end encryption, E2EE, messaging privacy, MITM attacks, cryptography vulnerabilities">
+    <meta name="author" content="Uğur Toprakdeviren">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Can WhatsApp See Your Messages? The E2EE Illusion">
+    <meta property="og:description" content="A critical analysis of WhatsApp's end-to-end encryption claims and the technical issues that may allow them to access your messages.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://toprakdeviren.github.io/posts/can-whatsapp-see-your-messages-the-e2ee-illusion.html">
+    <meta property="og:image" content="https://toprakdeviren.github.io/assets/images/posts/whatsapp-security.jpg">
+    <meta property="article:published_time" content="2025-03-13T10:00:00+00:00">
+    <meta property="article:author" content="Uğur Toprakdeviren">
+    <meta property="article:section" content="Cryptography">
+    <meta property="article:tag" content="encryption">
+    <meta property="article:tag" content="messaging">
+    <meta property="article:tag" content="privacy">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@toprakdevos">
+    <meta name="twitter:title" content="Can WhatsApp See Your Messages? The E2EE Illusion">
+    <meta name="twitter:description" content="A critical analysis of WhatsApp's end-to-end encryption claims and the technical issues that may allow them to access your messages.">
+    <meta name="twitter:image" content="https://toprakdeviren.github.io/assets/images/posts/whatsapp-security.jpg">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://toprakdeviren.github.io/posts/can-whatsapp-see-your-messages-the-e2ee-illusion.html">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <script src="../assets/js/main.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <site-navbar></site-navbar>
+        <site-header></site-header>
+
+        <article>
+            <div class="article-header">
+                <div class="article-meta">
+                    <span class="article-date">March 13, 2025</span>
+                    <span class="reading-time">
+                        <img src="../assets/icons/clock.svg" alt="Reading time" class="icon-clock" style="width: 14px; height: 14px; margin-right: 5px; vertical-align: -2px;">
+                        6 min read
+                    </span>
+                </div>
+                <h1 class="article-title">Can WhatsApp See Your Messages? The E2EE Illusion</h1>
+                <p class="article-subtitle">WhatsApp claims to offer end-to-end encryption (E2EE), but technical vulnerabilities in its implementation raise serious questions about the actual privacy and security of your messages.</p>
+            </div>
+            
+            <img src="../assets/images/posts/whatsapp-security.jpg" alt="WhatsApp Security Concept" class="featured-image">
+            
+            <div class="article-content">
+                <p>Can WhatsApp see your personal and group messages? The answer is very clear: <strong>YES</strong>.</p>
+                
+                <p>So how can an application that claims to use E2EE (End-to-End Encryption) do this? Let's examine the technical vulnerabilities that make this possible.</p>
+                
+                <h2>1. Public Shared Key Problem</h2>
+                
+                <p>The Public Shared Key is used in cryptology for PQR (Post-Quantum Resistance). It ensures that the key used for encryption/decryption is generated to be resistant to Quantum computers, thanks to Bernstein's work.</p>
+                
+                <p>You send an average of 100 PreShared-Keys to WhatsApp every week. This means: "These are my Public Keys for those who want to communicate with me. Please communicate with me using these public keys." As these keys run low, you send your new public keys to WhatsApp servers.</p>
+                
+                <p>But there's a critical problem: <strong>we don't know if the public key of the person we're talking to is really their public key</strong>. If WhatsApp gives us one of its own keys as Bob's Pre-Shared Key, it's directly performing a MITM (Man-In-The-Middle) attack.</p>
+                
+                <p>WhatsApp offers a solution to verify this, saying, "Check your Root key generated from the pre-shared key with your friend. If it's not the same, the person you're talking to is not that person." That's why when someone uninstalls and reinstalls WhatsApp, it warns, "The security code of the person you're talking to has changed. Please check."</p>
+                
+                <p>This requires distributed and independent PreSharedKey servers, but of course, WhatsApp doesn't support this and won't until they come up with a solution against it.</p>
+                
+                <h2>2. Multi-device Problem</h2>
+                
+                <p>You can now use WhatsApp on multiple devices, even just the Desktop application without scanning a QR code.</p>
+                
+                <p>A problem arises here. The information that you've logged in on another device is information that comes to you from WhatsApp servers, and if WhatsApp doesn't send you this information, a problem arises where it can read your messages on other devices as well.</p>
+                
+                <p>Signal developed the "Sesame Algorithm" as a precaution for this. However, there's no information that WhatsApp uses this protocol.</p>
+                
+                <blockquote>
+                    When you use multiple devices, each device needs to safely receive encryption keys. Without a proper protocol like Sesame, this creates security vulnerabilities.
+                </blockquote>
+                
+                <h2>3. Fast-Forward Problem</h2>
+                
+                <p>After you send someone a large file, when you forward that file to someone else, it goes instantly. WhatsApp explains that they do this for optimization on their servers, but this explanation isn't convincing or realistic.</p>
+                
+                <p>In a truly end-to-end encrypted system, forwarding should require re-encryption with the new recipient's keys, which takes time for large files. The instant forwarding suggests WhatsApp may have access to unencrypted content.</p>
+                
+                <h2>4. Group Messaging Problem</h2>
+                
+                <p>Group E2EE has been a long-discussed problem. Signal had previously found a very primitive solution to this problem, establishing E2EE with each person separately and sending the message to each one individually. So if there were 20 people in the group, your message was encrypted and sent separately to 20 people.</p>
+                
+                <p>Later, the MLS (Messaging Layer Security) protocol was developed as a solution for this problem. WhatsApp doesn't use the MLS protocol, but rather an intermediate solution called Session Based Key. Briefly, you can think of it as the group administrator distributing the group's key to other members.</p>
+                
+                <p>This approach introduces potential vulnerabilities in how group encryption keys are managed and distributed.</p>
+                
+                <h2>5. Group Video Conference Problem</h2>
+                
+                <p>Video conferencing and encryption is one of the biggest challenges in the streaming world.</p>
+                
+                <p>When you have a video conference on WhatsApp or Zoom, your video images are combined on Media Streaming servers and sent to other Peers as a single video. This process requires the server to have access to unencrypted video streams.</p>
+                
+                <p>Signal, by contrast, streams separately to each Peer. Because the data is encrypted, it can't be processed on the server side. The MLS solution can't be used here as in group messaging.</p>
+                
+                <p>That's why Signal supports video conferencing for a limited number of people. This approach brings many optimization challenges, battery problems, and network issues, but maintains true end-to-end encryption.</p>
+                
+                <div class="section-divider">
+                    <hr>
+                </div>
+                
+                <h2>6. Revenue Problem</h2>
+                
+                <p>It's estimated that about 100 billion messages are sent daily via WhatsApp. You can more or less guess the money needed to operate servers that handle such enormous demand.</p>
+                
+                <p>The problem is this: <strong>Why is WhatsApp providing such a service for free?</strong></p>
+                
+                <p>Could it be that Meta (formerly Facebook), with its business model built on data harvesting, is spending this money for people to message comfortably and safely, while it could be making money from such information?</p>
+                
+                <h2>7. Metadata Issue</h2>
+                
+                <p>Some other end-to-end encrypted applications claim that WhatsApp processes meta-data and makes inferences from it, claiming that they don't do such a thing. But this is probably one of the last sources of information for WhatsApp.</p>
+                
+                <p>Even with perfect message encryption, metadata analysis can reveal who you talk to, when, how often, and patterns of communication that can be highly revealing.</p>
+                
+                <h2>8. Real-life Anomalies</h2>
+                
+                <p>A businessman I personally spoke to told me that when he went abroad, authorities put all his WhatsApp correspondence in front of him, and he didn't even know he had corresponded with so many people.</p>
+                
+                <p>Also, WhatsApp correspondences appearing in court cases have become quite common.</p>
+                
+                <p>Some might argue that the other person's device was compromised, but it's not that simple. WhatsApp claims to implement "Deniability" - you should be able to cryptologically deny your correspondence with the person you're talking to. But unfortunately, this doesn't seem to be achieved in practice.</p>
+                
+                <blockquote>
+                    Some might wonder, "Will WhatsApp follow me specifically?" No, they're not tracking individuals in isolation. But you're part of the whole, and they're conducting data analysis from big-data for marketing purposes.
+                </blockquote>
+                
+                <h2>Conclusion</h2>
+                
+                <p>No messaging application connected to a server is truly secure. As I've written before, what we need is not E2EE but P2PE (Peer-to-Peer Encryption). True security comes from eliminating the server as a potential point of vulnerability.</p>
+                
+                <p>In a P2PE system, messages would travel directly between users without passing through or being stored on central servers. This would eliminate many of the vulnerabilities described above and give users true control over their communications.</p>
+                
+                <p>Until we achieve that, we should maintain healthy skepticism about claims of "unbreakable" encryption from any service that maintains central servers and a business model that doesn't transparently explain how they cover their enormous operational costs.</p>
+                
+                <div class="post-tags">
+                    <span class="post-tag">Encryption</span>
+                    <span class="post-tag">Security</span>
+                    <span class="post-tag">WhatsApp</span>
+                    <span class="post-tag">Privacy</span>
+                </div>
+            </div>
+        </article>
+
+        <site-footer></site-footer>
+    </div>
+</body>
+</html>
